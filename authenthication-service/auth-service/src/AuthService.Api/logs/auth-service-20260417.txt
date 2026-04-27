@@ -1,43 +1,19 @@
-[2026-04-17 08:06:20 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
-[2026-04-17 08:06:21 ERR] Ocurrió un error al inicializar la base de datos {"SourceContext":"Program"}
-Npgsql.PostgresException (0x80004005): 28P01: password authentication failed for user "IN6AM"
-   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
-   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
-   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
-   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|214_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
-   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
-   at Npgsql.UnpooledDataSource.Get(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
-   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
-   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlDatabaseCreator.Exists(Boolean async, CancellationToken cancellationToken)
-   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlDatabaseCreator.Exists(Boolean async, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator.EnsureCreatedAsync(CancellationToken cancellationToken)
-   at Program.<Main>$(String[] args) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Program.cs:line 131
-  Exception data:
-    Severity: FATAL
-    SqlState: 28P01
-    MessageText: password authentication failed for user "IN6AM"
-    File: auth.c
-    Line: 339
-    Routine: auth_failed
-[2026-04-17 08:12:56 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
-[2026-04-17 08:12:56 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
-[2026-04-17 08:12:57 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
-[2026-04-17 08:12:57 ERR] An exception occurred while trying to decrypt the element. {"EventId":{"Id":43,"Name":"ExceptionOccurredTryingToDecryptElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor"}
+[2026-04-17 08:23:03 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
+[2026-04-17 08:23:03 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
+[2026-04-17 08:23:04 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
+[2026-04-17 08:23:04 ERR] An exception occurred while trying to decrypt the element. {"EventId":{"Id":43,"Name":"ExceptionOccurredTryingToDecryptElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor"}
 System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
    at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
-[2026-04-17 08:12:57 ERR] An exception occurred while processing the key element '<key id="8db064b8-5a12-4f68-8c87-9cd437f049a2" version="1" />'. {"EventId":{"Id":24,"Name":"ExceptionOccurredWhileProcessingTheKeyElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager"}
+[2026-04-17 08:23:04 ERR] An exception occurred while processing the key element '<key id="8db064b8-5a12-4f68-8c87-9cd437f049a2" version="1" />'. {"EventId":{"Id":24,"Name":"ExceptionOccurredWhileProcessingTheKeyElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager"}
 System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
    at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
    at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
    at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
-[2026-04-17 08:12:57 WRN] Key {8db064b8-5a12-4f68-8c87-9cd437f049a2} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
+[2026-04-17 08:23:04 WRN] Key {8db064b8-5a12-4f68-8c87-9cd437f049a2} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
 System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
@@ -50,44 +26,19 @@ System.Security.Cryptography.CryptographicException: Error occurred during a cry
    at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
    at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
    at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
-[2026-04-17 08:12:57 ERR] An exception occurred while trying to decrypt the element. {"EventId":{"Id":43,"Name":"ExceptionOccurredTryingToDecryptElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor"}
+[2026-04-17 08:23:04 ERR] An exception occurred while trying to decrypt the element. {"EventId":{"Id":43,"Name":"ExceptionOccurredTryingToDecryptElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor"}
 System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
    at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
-[2026-04-17 08:12:57 ERR] An exception occurred while processing the key element '<key id="5c0616ac-e854-4ae6-9dd8-f7836247f558" version="1" />'. {"EventId":{"Id":24,"Name":"ExceptionOccurredWhileProcessingTheKeyElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager"}
-System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
-   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
-   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
-   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
-   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
-   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
-[2026-04-17 08:12:57 WRN] Key {5c0616ac-e854-4ae6-9dd8-f7836247f558} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
+[2026-04-17 08:23:04 ERR] An exception occurred while processing the key element '<key id="5c0616ac-e854-4ae6-9dd8-f7836247f558" version="1" />'. {"EventId":{"Id":24,"Name":"ExceptionOccurredWhileProcessingTheKeyElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager"}
 System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
    at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
    at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
    at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
-   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
-   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
-   at System.Lazy`1.CreateValue()
-   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
-   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
-   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
-[2026-04-17 08:12:57 ERR] An exception occurred while trying to decrypt the element. {"EventId":{"Id":43,"Name":"ExceptionOccurredTryingToDecryptElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor"}
-System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
-   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
-   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
-   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
-[2026-04-17 08:12:57 ERR] An exception occurred while processing the key element '<key id="abd20c60-64c2-49ad-b2a0-82a1f541872b" version="1" />'. {"EventId":{"Id":24,"Name":"ExceptionOccurredWhileProcessingTheKeyElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager"}
-System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
-   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
-   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
-   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
-   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
-   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
-[2026-04-17 08:12:57 WRN] Key {abd20c60-64c2-49ad-b2a0-82a1f541872b} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
+[2026-04-17 08:23:04 WRN] Key {5c0616ac-e854-4ae6-9dd8-f7836247f558} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
 System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
@@ -100,7 +51,32 @@ System.Security.Cryptography.CryptographicException: Error occurred during a cry
    at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
    at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
    at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
-[2026-04-17 08:12:57 WRN] Key {abd20c60-64c2-49ad-b2a0-82a1f541872b} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
+[2026-04-17 08:23:04 ERR] An exception occurred while trying to decrypt the element. {"EventId":{"Id":43,"Name":"ExceptionOccurredTryingToDecryptElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor"}
+System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+[2026-04-17 08:23:04 ERR] An exception occurred while processing the key element '<key id="abd20c60-64c2-49ad-b2a0-82a1f541872b" version="1" />'. {"EventId":{"Id":24,"Name":"ExceptionOccurredWhileProcessingTheKeyElement"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager"}
+System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+[2026-04-17 08:23:04 WRN] Key {abd20c60-64c2-49ad-b2a0-82a1f541872b} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
+System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+[2026-04-17 08:23:04 WRN] Key {abd20c60-64c2-49ad-b2a0-82a1f541872b} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
 System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
@@ -113,7 +89,7 @@ System.Security.Cryptography.CryptographicException: Error occurred during a cry
    at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
    at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
    at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
-[2026-04-17 08:12:57 WRN] Key {5c0616ac-e854-4ae6-9dd8-f7836247f558} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
+[2026-04-17 08:23:04 WRN] Key {5c0616ac-e854-4ae6-9dd8-f7836247f558} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
 System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
@@ -126,7 +102,7 @@ System.Security.Cryptography.CryptographicException: Error occurred during a cry
    at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
    at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
    at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
-[2026-04-17 08:12:57 WRN] Key {8db064b8-5a12-4f68-8c87-9cd437f049a2} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
+[2026-04-17 08:23:04 WRN] Key {8db064b8-5a12-4f68-8c87-9cd437f049a2} is ineligible to be the default key because its CreateEncryptor method failed. {"EventId":{"Id":12,"Name":"KeyIsIneligibleToBeTheDefaultKeyBecauseItsMethodFailed"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver"}
 System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
    at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
@@ -139,298 +115,67 @@ System.Security.Cryptography.CryptographicException: Error occurred during a cry
    at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
    at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
    at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
-[2026-04-17 08:12:57 INF] API de AuthService está ejecutándose en http://localhost:5269. Endpoint de salud: http://localhost:5269/api/v1/health {"SourceContext":"Program"}
-[2026-04-17 08:18:17 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
-[2026-04-17 08:18:17 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
-[2026-04-17 08:18:18 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
-[2026-04-17 08:18:18 INF] API de AuthService está ejecutándose en http://localhost:5269. Endpoint de salud: http://localhost:5269/api/v1/health {"SourceContext":"Program"}
-[2026-04-17 08:18:24 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 3.1777 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGA:00000001","ConnectionId":"0HNKSHGNTQQGA"}
-[2026-04-17 08:18:25 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"a24575fd-24cb-49ab-b81a-5cb582aedc03","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNKSHGNTQQGA:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHGNTQQGA"}
-[2026-04-17 08:18:25 INF] HTTP POST /api/v1/auth/login responded 200 in 626.0532 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGA:00000002","ConnectionId":"0HNKSHGNTQQGA"}
-[2026-04-17 08:28:32 INF] HTTP POST /api/v1/auth/login responded 400 in 17.8776 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGC:00000001","ConnectionId":"0HNKSHGNTQQGC"}
-[2026-04-17 08:31:26 INF] HTTP POST /api/v1/auth/login responded 400 in 7.6331 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGE:00000001","ConnectionId":"0HNKSHGNTQQGE"}
-[2026-04-17 08:45:41 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQGG:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQGG"}
-System.InvalidOperationException: This request does not have a Content-Type header. Forms are available from requests with bodies like POSTs and a form Content-Type of either application/x-www-form-urlencoded or multipart/form-data.
-   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
-   at AuthService.Api.ModelBinders.FileDataModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\ModelBinders\FileDataModelBinder.cs:line 24
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertyAsync(ModelBindingContext bindingContext, ModelMetadata property, IModelBinder propertyBinder, String fieldName, String modelName)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertiesAsync(ModelBindingContext bindingContext, Int32 propertyData, IReadOnlyList`1 boundProperties)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindModelCoreAsync(ModelBindingContext bindingContext, Int32 propertyData)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 08:45:41 INF] HTTP POST /api/v1/auth/register responded 400 in 33.0067 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGG:00000001","ConnectionId":"0HNKSHGNTQQGG"}
-[2026-04-17 08:47:00 INF] HTTP POST /api/v1/auth/register responded 400 in 9.3755 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGI:00000001","ConnectionId":"0HNKSHGNTQQGI"}
-[2026-04-17 08:53:40 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQGK:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQGK"}
-System.InvalidOperationException: This request does not have a Content-Type header. Forms are available from requests with bodies like POSTs and a form Content-Type of either application/x-www-form-urlencoded or multipart/form-data.
-   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
-   at AuthService.Api.ModelBinders.FileDataModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\ModelBinders\FileDataModelBinder.cs:line 24
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertyAsync(ModelBindingContext bindingContext, ModelMetadata property, IModelBinder propertyBinder, String fieldName, String modelName)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertiesAsync(ModelBindingContext bindingContext, Int32 propertyData, IReadOnlyList`1 boundProperties)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindModelCoreAsync(ModelBindingContext bindingContext, Int32 propertyData)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 08:53:40 INF] HTTP POST /api/v1/auth/register responded 400 in 6.1577 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGK:00000001","ConnectionId":"0HNKSHGNTQQGK"}
-[2026-04-17 08:55:35 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQGM:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQGM"}
-System.InvalidOperationException: This request does not have a Content-Type header. Forms are available from requests with bodies like POSTs and a form Content-Type of either application/x-www-form-urlencoded or multipart/form-data.
-   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
-   at AuthService.Api.ModelBinders.FileDataModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\ModelBinders\FileDataModelBinder.cs:line 24
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertyAsync(ModelBindingContext bindingContext, ModelMetadata property, IModelBinder propertyBinder, String fieldName, String modelName)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertiesAsync(ModelBindingContext bindingContext, Int32 propertyData, IReadOnlyList`1 boundProperties)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindModelCoreAsync(ModelBindingContext bindingContext, Int32 propertyData)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 08:55:35 INF] HTTP POST /api/v1/auth/register responded 400 in 5.7193 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGM:00000001","ConnectionId":"0HNKSHGNTQQGM"}
-[2026-04-17 08:55:36 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQGM:00000002","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQGM"}
-System.InvalidOperationException: This request does not have a Content-Type header. Forms are available from requests with bodies like POSTs and a form Content-Type of either application/x-www-form-urlencoded or multipart/form-data.
-   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
-   at AuthService.Api.ModelBinders.FileDataModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\ModelBinders\FileDataModelBinder.cs:line 24
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertyAsync(ModelBindingContext bindingContext, ModelMetadata property, IModelBinder propertyBinder, String fieldName, String modelName)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertiesAsync(ModelBindingContext bindingContext, Int32 propertyData, IReadOnlyList`1 boundProperties)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindModelCoreAsync(ModelBindingContext bindingContext, Int32 propertyData)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 08:55:36 INF] HTTP POST /api/v1/auth/register responded 400 in 3.3176 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGM:00000002","ConnectionId":"0HNKSHGNTQQGM"}
-[2026-04-17 08:55:37 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQGM:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQGM"}
-System.InvalidOperationException: This request does not have a Content-Type header. Forms are available from requests with bodies like POSTs and a form Content-Type of either application/x-www-form-urlencoded or multipart/form-data.
-   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
-   at AuthService.Api.ModelBinders.FileDataModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\ModelBinders\FileDataModelBinder.cs:line 24
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertyAsync(ModelBindingContext bindingContext, ModelMetadata property, IModelBinder propertyBinder, String fieldName, String modelName)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertiesAsync(ModelBindingContext bindingContext, Int32 propertyData, IReadOnlyList`1 boundProperties)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindModelCoreAsync(ModelBindingContext bindingContext, Int32 propertyData)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 08:55:37 INF] HTTP POST /api/v1/auth/register responded 400 in 6.2893 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGM:00000003","ConnectionId":"0HNKSHGNTQQGM"}
-[2026-04-17 08:56:27 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQGM:00000004","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQGM"}
-System.InvalidOperationException: This request does not have a Content-Type header. Forms are available from requests with bodies like POSTs and a form Content-Type of either application/x-www-form-urlencoded or multipart/form-data.
-   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
-   at AuthService.Api.ModelBinders.FileDataModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\ModelBinders\FileDataModelBinder.cs:line 24
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertyAsync(ModelBindingContext bindingContext, ModelMetadata property, IModelBinder propertyBinder, String fieldName, String modelName)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertiesAsync(ModelBindingContext bindingContext, Int32 propertyData, IReadOnlyList`1 boundProperties)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindModelCoreAsync(ModelBindingContext bindingContext, Int32 propertyData)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 08:56:27 INF] HTTP POST /api/v1/auth/register responded 400 in 4.9064 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGM:00000004","ConnectionId":"0HNKSHGNTQQGM"}
-[2026-04-17 08:56:45 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQGM:00000005","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQGM"}
-System.InvalidOperationException: This request does not have a Content-Type header. Forms are available from requests with bodies like POSTs and a form Content-Type of either application/x-www-form-urlencoded or multipart/form-data.
-   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
-   at AuthService.Api.ModelBinders.FileDataModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\ModelBinders\FileDataModelBinder.cs:line 24
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertyAsync(ModelBindingContext bindingContext, ModelMetadata property, IModelBinder propertyBinder, String fieldName, String modelName)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertiesAsync(ModelBindingContext bindingContext, Int32 propertyData, IReadOnlyList`1 boundProperties)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindModelCoreAsync(ModelBindingContext bindingContext, Int32 propertyData)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 08:56:45 INF] HTTP POST /api/v1/auth/register responded 400 in 5.3708 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGM:00000005","ConnectionId":"0HNKSHGNTQQGM"}
-[2026-04-17 08:58:20 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQGO:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQGO"}
-System.InvalidOperationException: This request does not have a Content-Type header. Forms are available from requests with bodies like POSTs and a form Content-Type of either application/x-www-form-urlencoded or multipart/form-data.
-   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
-   at AuthService.Api.ModelBinders.FileDataModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\ModelBinders\FileDataModelBinder.cs:line 24
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertyAsync(ModelBindingContext bindingContext, ModelMetadata property, IModelBinder propertyBinder, String fieldName, String modelName)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertiesAsync(ModelBindingContext bindingContext, Int32 propertyData, IReadOnlyList`1 boundProperties)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindModelCoreAsync(ModelBindingContext bindingContext, Int32 propertyData)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 08:58:20 INF] HTTP POST /api/v1/auth/register responded 400 in 6.6104 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGO:00000001","ConnectionId":"0HNKSHGNTQQGO"}
-[2026-04-17 08:58:24 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQGO:00000002","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQGO"}
-System.InvalidOperationException: This request does not have a Content-Type header. Forms are available from requests with bodies like POSTs and a form Content-Type of either application/x-www-form-urlencoded or multipart/form-data.
-   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
-   at AuthService.Api.ModelBinders.FileDataModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\ModelBinders\FileDataModelBinder.cs:line 24
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertyAsync(ModelBindingContext bindingContext, ModelMetadata property, IModelBinder propertyBinder, String fieldName, String modelName)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertiesAsync(ModelBindingContext bindingContext, Int32 propertyData, IReadOnlyList`1 boundProperties)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindModelCoreAsync(ModelBindingContext bindingContext, Int32 propertyData)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 08:58:24 INF] HTTP POST /api/v1/auth/register responded 400 in 5.6600 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGO:00000002","ConnectionId":"0HNKSHGNTQQGO"}
-[2026-04-17 08:58:39 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQGO:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQGO"}
-System.InvalidOperationException: This request does not have a Content-Type header. Forms are available from requests with bodies like POSTs and a form Content-Type of either application/x-www-form-urlencoded or multipart/form-data.
-   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
-   at AuthService.Api.ModelBinders.FileDataModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\ModelBinders\FileDataModelBinder.cs:line 24
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertyAsync(ModelBindingContext bindingContext, ModelMetadata property, IModelBinder propertyBinder, String fieldName, String modelName)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertiesAsync(ModelBindingContext bindingContext, Int32 propertyData, IReadOnlyList`1 boundProperties)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindModelCoreAsync(ModelBindingContext bindingContext, Int32 propertyData)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 08:58:39 INF] HTTP POST /api/v1/auth/register responded 400 in 5.5179 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGO:00000003","ConnectionId":"0HNKSHGNTQQGO"}
-[2026-04-17 08:59:14 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQGQ:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQGQ"}
-System.InvalidOperationException: This request does not have a Content-Type header. Forms are available from requests with bodies like POSTs and a form Content-Type of either application/x-www-form-urlencoded or multipart/form-data.
-   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
-   at AuthService.Api.ModelBinders.FileDataModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\ModelBinders\FileDataModelBinder.cs:line 24
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertyAsync(ModelBindingContext bindingContext, ModelMetadata property, IModelBinder propertyBinder, String fieldName, String modelName)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertiesAsync(ModelBindingContext bindingContext, Int32 propertyData, IReadOnlyList`1 boundProperties)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindModelCoreAsync(ModelBindingContext bindingContext, Int32 propertyData)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 08:59:14 INF] HTTP POST /api/v1/auth/register responded 400 in 5.5514 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGQ:00000001","ConnectionId":"0HNKSHGNTQQGQ"}
-[2026-04-17 08:59:26 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQGQ:00000002","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQGQ"}
-System.InvalidOperationException: This request does not have a Content-Type header. Forms are available from requests with bodies like POSTs and a form Content-Type of either application/x-www-form-urlencoded or multipart/form-data.
-   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
-   at AuthService.Api.ModelBinders.FileDataModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\ModelBinders\FileDataModelBinder.cs:line 24
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertyAsync(ModelBindingContext bindingContext, ModelMetadata property, IModelBinder propertyBinder, String fieldName, String modelName)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertiesAsync(ModelBindingContext bindingContext, Int32 propertyData, IReadOnlyList`1 boundProperties)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindModelCoreAsync(ModelBindingContext bindingContext, Int32 propertyData)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 08:59:26 INF] HTTP POST /api/v1/auth/register responded 400 in 4.5995 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGQ:00000002","ConnectionId":"0HNKSHGNTQQGQ"}
-[2026-04-17 08:59:26 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQGQ:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQGQ"}
-System.InvalidOperationException: This request does not have a Content-Type header. Forms are available from requests with bodies like POSTs and a form Content-Type of either application/x-www-form-urlencoded or multipart/form-data.
-   at Microsoft.AspNetCore.Http.Features.FormFeature.ReadForm()
-   at AuthService.Api.ModelBinders.FileDataModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\ModelBinders\FileDataModelBinder.cs:line 24
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertyAsync(ModelBindingContext bindingContext, ModelMetadata property, IModelBinder propertyBinder, String fieldName, String modelName)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindPropertiesAsync(ModelBindingContext bindingContext, Int32 propertyData, IReadOnlyList`1 boundProperties)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder.BindModelCoreAsync(ModelBindingContext bindingContext, Int32 propertyData)
-   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
-   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 08:59:26 INF] HTTP POST /api/v1/auth/register responded 400 in 5.1593 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGQ:00000003","ConnectionId":"0HNKSHGNTQQGQ"}
-[2026-04-17 09:02:00 INF] HTTP POST /api/v1/auth/register responded 400 in 1.4993 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGS:00000001","ConnectionId":"0HNKSHGNTQQGS"}
-[2026-04-17 09:08:04 INF] HTTP POST /api/v1/auth/register responded 400 in 1.2342 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQGU:00000001","ConnectionId":"0HNKSHGNTQQGU"}
-[2026-04-17 09:14:12 INF] HTTP POST /api/v1/auth/register responded 400 in 0.9763 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQH0:00000001","ConnectionId":"0HNKSHGNTQQH0"}
-[2026-04-17 09:16:19 INF] User johndoe registered successfully {"EventId":{"Id":1001,"Name":"LogUserRegistered"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"2b8f8e11-d474-4da9-82cc-fbc18234a61d","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHGNTQQH2:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQH2"}
-[2026-04-17 09:16:19 INF] HTTP POST /api/v1/auth/register responded 201 in 367.2680 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQH2:00000001","ConnectionId":"0HNKSHGNTQQH2"}
-[2026-04-17 09:16:30 ERR] Failed to send email {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"2b8f8e11-d474-4da9-82cc-fbc18234a61d","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHGNTQQH2:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQH2"}
+[2026-04-17 08:23:04 INF] API de AuthService está ejecutándose en http://localhost:5269. Endpoint de salud: http://localhost:5269/api/v1/health {"SourceContext":"Program"}
+[2026-04-17 08:23:22 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
+[2026-04-17 08:23:22 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
+[2026-04-17 08:23:23 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
+[2026-04-17 08:23:23 INF] API de AuthService está ejecutándose en http://localhost:5269. Endpoint de salud: http://localhost:5269/api/v1/health {"SourceContext":"Program"}
+[2026-04-17 08:23:43 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
+[2026-04-17 08:23:43 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
+[2026-04-17 08:23:43 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
+[2026-04-17 08:23:43 INF] API de AuthService está ejecutándose en http://localhost:5269. Endpoint de salud: http://localhost:5269/api/v1/health {"SourceContext":"Program"}
+[2026-04-17 08:32:59 INF] HTTP POST /api/v1/auth/register responded 400 in 298.7166 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHOSH7QED:00000001","ConnectionId":"0HNKSHOSH7QED"}
+[2026-04-17 08:34:16 INF] User jgutierrez registered successfully {"EventId":{"Id":1001,"Name":"LogUserRegistered"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"c9f0cbba-f9c3-47e4-aebc-1a79f380dcb2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHOSH7QEF:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHOSH7QEF"}
+[2026-04-17 08:34:16 INF] HTTP POST /api/v1/auth/register responded 201 in 578.2626 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHOSH7QEF:00000001","ConnectionId":"0HNKSHOSH7QEF"}
+[2026-04-17 08:34:27 ERR] Failed to send email {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"c9f0cbba-f9c3-47e4-aebc-1a79f380dcb2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHOSH7QEF:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHOSH7QEF"}
 System.TimeoutException: The operation has timed out.
    at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
    at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
    at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
-   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 119
-[2026-04-17 09:16:30 ERR] Failed to send email {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"2b8f8e11-d474-4da9-82cc-fbc18234a61d","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHGNTQQH2:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQH2"}
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 119
+[2026-04-17 08:34:27 ERR] Failed to send email {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"c9f0cbba-f9c3-47e4-aebc-1a79f380dcb2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHOSH7QEF:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHOSH7QEF"}
 System.TimeoutException: The operation has timed out.
    at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
    at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
    at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
-   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 119
-[2026-04-17 09:16:30 ERR] Failed to send verification email {"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"2b8f8e11-d474-4da9-82cc-fbc18234a61d","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHGNTQQH2:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQH2"}
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 119
+[2026-04-17 08:34:27 ERR] Failed to send verification email {"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"c9f0cbba-f9c3-47e4-aebc-1a79f380dcb2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHOSH7QEF:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHOSH7QEF"}
 System.InvalidOperationException: Failed to send email: The operation has timed out.
  ---> System.TimeoutException: The operation has timed out.
    at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
    at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
    at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
-   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 119
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 119
    --- End of inner exception stack trace ---
-   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 171
-   at AuthService.Application.Services.EmailService.SendEmailVerificationAsync(String email, String username, String token) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 29
-   at AuthService.Application.Services.AuthService.<>c__DisplayClass9_0.<<RegisterAsync>b__0>d.MoveNext() in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 140
-[2026-04-17 09:18:19 INF] HTTP POST /api/v1/auth/login responded 400 in 0.5708 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQH4:00000001","ConnectionId":"0HNKSHGNTQQH4"}
-[2026-04-17 09:19:35 WRN] Failed login attempt {"EventId":{"Id":1003,"Name":"LogFailedLoginAttempt"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"a24575fd-24cb-49ab-b81a-5cb582aedc03","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNKSHGNTQQH6:00000001","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHGNTQQH6"}
-[2026-04-17 09:19:35 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQH6:00000001","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHGNTQQH6"}
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 171
+   at AuthService.Application.Services.EmailService.SendEmailVerificationAsync(String email, String username, String token) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 29
+   at AuthService.Application.Services.AuthService.<>c__DisplayClass9_0.<<RegisterAsync>b__0>d.MoveNext() in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 140
+[2026-04-17 08:36:32 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 4.0250 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHOSH7QEG:00000001","ConnectionId":"0HNKSHOSH7QEG"}
+[2026-04-17 08:36:32 WRN] Failed login attempt {"EventId":{"Id":1003,"Name":"LogFailedLoginAttempt"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"a20994e2-7b2e-444d-bee0-6c287f602e80","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNKSHOSH7QEG:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHOSH7QEG"}
+[2026-04-17 08:36:32 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHOSH7QEG:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHOSH7QEG"}
 System.UnauthorizedAccessException: User account is disabled
-   at AuthService.Application.Services.AuthService.LoginAsync(LoginDto loginDto) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 186
-   at AuthService.Api.Controllers.AuthController.Login(LoginDto loginDto) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Controllers\AuthController.cs:line 118
+   at AuthService.Application.Services.AuthService.LoginAsync(LoginDto loginDto) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 186
+   at AuthService.Api.Controllers.AuthController.Login(LoginDto loginDto) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Controllers\AuthController.cs:line 118
+   at lambda_method526(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
+[2026-04-17 08:36:32 INF] HTTP POST /api/v1/auth/login responded 401 in 110.7550 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHOSH7QEG:00000002","ConnectionId":"0HNKSHOSH7QEG"}
+[2026-04-17 08:37:08 WRN] Registration rejected: username already exists {"EventId":{"Id":1005,"Name":"LogRegistrationWithExistingUsername"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"c9f0cbba-f9c3-47e4-aebc-1a79f380dcb2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHOSH7QEI:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHOSH7QEI"}
+[2026-04-17 08:37:08 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHOSH7QEI:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHOSH7QEI"}
+AuthService.Application.Exceptions.BusinessException: Username already exists
+   at AuthService.Application.Services.AuthService.RegisterAsync(RegisterDto registerDto) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 42
+   at AuthService.Api.Controllers.AuthController.Register(RegisterDto registerDto) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Controllers\AuthController.cs:line 108
    at lambda_method21(Closure, Object)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
@@ -444,87 +189,35 @@ System.UnauthorizedAccessException: User account is disabled
    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 09:19:35 INF] HTTP POST /api/v1/auth/login responded 401 in 37.6115 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQH6:00000001","ConnectionId":"0HNKSHGNTQQH6"}
-[2026-04-17 09:20:07 WRN] Failed login attempt {"EventId":{"Id":1003,"Name":"LogFailedLoginAttempt"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"a24575fd-24cb-49ab-b81a-5cb582aedc03","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNKSHGNTQQH6:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHGNTQQH6"}
-[2026-04-17 09:20:07 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQH6:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHGNTQQH6"}
-System.UnauthorizedAccessException: User account is disabled
-   at AuthService.Application.Services.AuthService.LoginAsync(LoginDto loginDto) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 186
-   at AuthService.Api.Controllers.AuthController.Login(LoginDto loginDto) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Controllers\AuthController.cs:line 118
-   at lambda_method21(Closure, Object)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 09:20:07 INF] HTTP POST /api/v1/auth/login responded 401 in 8.2766 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQH6:00000002","ConnectionId":"0HNKSHGNTQQH6"}
-[2026-04-17 09:20:18 WRN] Registration rejected: email already exists {"EventId":{"Id":1004,"Name":"LogRegistrationWithExistingEmail"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"2b8f8e11-d474-4da9-82cc-fbc18234a61d","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHGNTQQH6:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQH6"}
-[2026-04-17 09:20:18 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQH6:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHGNTQQH6"}
-AuthService.Application.Exceptions.BusinessException: Email already exists
-   at AuthService.Application.Services.AuthService.RegisterAsync(RegisterDto registerDto) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 35
-   at AuthService.Api.Controllers.AuthController.Register(RegisterDto registerDto) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Controllers\AuthController.cs:line 108
-   at lambda_method619(Closure, Object)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 09:20:18 INF] HTTP POST /api/v1/auth/register responded 400 in 7.2050 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQH6:00000003","ConnectionId":"0HNKSHGNTQQH6"}
-[2026-04-17 09:20:41 WRN] Failed login attempt {"EventId":{"Id":1003,"Name":"LogFailedLoginAttempt"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"a24575fd-24cb-49ab-b81a-5cb582aedc03","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNKSHGNTQQH6:00000004","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHGNTQQH6"}
-[2026-04-17 09:20:41 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQH6:00000004","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHGNTQQH6"}
-System.UnauthorizedAccessException: User account is disabled
-   at AuthService.Application.Services.AuthService.LoginAsync(LoginDto loginDto) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 186
-   at AuthService.Api.Controllers.AuthController.Login(LoginDto loginDto) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Controllers\AuthController.cs:line 118
-   at lambda_method21(Closure, Object)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 09:20:41 INF] HTTP POST /api/v1/auth/login responded 401 in 8.2690 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQH6:00000004","ConnectionId":"0HNKSHGNTQQH6"}
-[2026-04-17 09:21:55 WRN] Failed login attempt {"EventId":{"Id":1003,"Name":"LogFailedLoginAttempt"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"a24575fd-24cb-49ab-b81a-5cb582aedc03","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNKSHGNTQQH8:00000001","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHGNTQQH8"}
-[2026-04-17 09:21:55 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNKSHGNTQQH8:00000001","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHGNTQQH8"}
-System.UnauthorizedAccessException: User account is disabled
-   at AuthService.Application.Services.AuthService.LoginAsync(LoginDto loginDto) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 186
-   at AuthService.Api.Controllers.AuthController.Login(LoginDto loginDto) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Controllers\AuthController.cs:line 118
-   at lambda_method21(Closure, Object)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
-   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Pictures\2021001\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
-[2026-04-17 09:21:55 INF] HTTP POST /api/v1/auth/login responded 401 in 16.0655 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQH8:00000001","ConnectionId":"0HNKSHGNTQQH8"}
-[2026-04-17 09:22:41 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"a24575fd-24cb-49ab-b81a-5cb582aedc03","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNKSHGNTQQH8:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHGNTQQH8"}
-[2026-04-17 09:22:41 INF] HTTP POST /api/v1/auth/login responded 200 in 85.8891 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHGNTQQH8:00000002","ConnectionId":"0HNKSHGNTQQH8"}
+   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
+[2026-04-17 08:37:08 INF] HTTP POST /api/v1/auth/register responded 400 in 15.9745 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHOSH7QEI:00000001","ConnectionId":"0HNKSHOSH7QEI"}
+[2026-04-17 08:37:21 INF] User mencho registered successfully {"EventId":{"Id":1001,"Name":"LogUserRegistered"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"c9f0cbba-f9c3-47e4-aebc-1a79f380dcb2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHOSH7QEI:00000002","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHOSH7QEI"}
+[2026-04-17 08:37:21 INF] HTTP POST /api/v1/auth/register responded 201 in 308.2655 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHOSH7QEI:00000002","ConnectionId":"0HNKSHOSH7QEI"}
+[2026-04-17 08:37:31 ERR] Failed to send email {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"c9f0cbba-f9c3-47e4-aebc-1a79f380dcb2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHOSH7QEI:00000002","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHOSH7QEI"}
+System.TimeoutException: The operation has timed out.
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 119
+[2026-04-17 08:37:31 ERR] Failed to send email {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"c9f0cbba-f9c3-47e4-aebc-1a79f380dcb2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHOSH7QEI:00000002","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHOSH7QEI"}
+System.TimeoutException: The operation has timed out.
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 119
+[2026-04-17 08:37:31 ERR] Failed to send verification email {"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"c9f0cbba-f9c3-47e4-aebc-1a79f380dcb2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNKSHOSH7QEI:00000002","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNKSHOSH7QEI"}
+System.InvalidOperationException: Failed to send email: The operation has timed out.
+ ---> System.TimeoutException: The operation has timed out.
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 119
+   --- End of inner exception stack trace ---
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 171
+   at AuthService.Application.Services.EmailService.SendEmailVerificationAsync(String email, String username, String token) in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 29
+   at AuthService.Application.Services.AuthService.<>c__DisplayClass9_0.<<RegisterAsync>b__0>d.MoveNext() in C:\Users\Informatica\Documents\IN6AM\KinalSports\authenthication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 140
+[2026-04-17 08:38:56 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"a20994e2-7b2e-444d-bee0-6c287f602e80","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNKSHOSH7QEJ:00000001","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHOSH7QEJ"}
+[2026-04-17 08:38:56 INF] HTTP POST /api/v1/auth/login responded 200 in 125.3170 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHOSH7QEJ:00000001","ConnectionId":"0HNKSHOSH7QEJ"}
+[2026-04-17 08:52:05 INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 0.7703 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHOSH7QEK:00000001","ConnectionId":"0HNKSHOSH7QEK"}
+[2026-04-17 08:52:05 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"a20994e2-7b2e-444d-bee0-6c287f602e80","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNKSHOSH7QEK:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNKSHOSH7QEK"}
+[2026-04-17 08:52:05 INF] HTTP POST /api/v1/auth/login responded 200 in 118.6229 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNKSHOSH7QEK:00000002","ConnectionId":"0HNKSHOSH7QEK"}

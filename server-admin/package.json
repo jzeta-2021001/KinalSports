@@ -28,8 +28,6 @@
     "uuid": "^13.0.0"
   },
   "devDependencies": {
-    "debug": "^4.4.3",
-    "fdir": "^6.5.0",
     "nodemon": "^3.1.11"
   }
 }
